@@ -15,6 +15,6 @@ defmodule Scraper.Server do
   end
 
   def handle_cast({ :push, new }, queue) do
-    { :noreply, [new|queue] }
+    { :noreply, queue ++ [new]}
   end
 end
